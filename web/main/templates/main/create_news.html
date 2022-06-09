@@ -1,0 +1,19 @@
+{% extends 'main/base.html'%}
+
+{% block title %}
+Новости
+{% endblock %}
+
+{% block content %}
+<h3>Do you want to add news?<br></h3>
+
+<form method="post" id="create_news_frm">
+    {% csrf_token %}
+    {{ form.title }}<br>
+    {{ form.text }}<br>
+    <button type="submit" class="btn btn-success" id="create_news_button">Добавить</button>
+    <span>{{ error }}</span>
+</form>
+<script src="/static/js/create_news.js"></script>
+
+{% endblock %}

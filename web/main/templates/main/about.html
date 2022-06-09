@@ -1,0 +1,28 @@
+{% extends 'main/base.html'%}
+
+{% block title %}
+О сайте
+{% endblock %}
+
+{% block content %}
+<!--    <h3>О сайте</h3>-->
+        <p><span>Сайте сделан в рамках лабораторной работы<br></span></p>
+        <p>Контакты:<br></p>
+        <p>Тел.: 8(977)676-13-55<br></p>
+        <p>Эл. почта: vovk1402@gmail.com</p>
+        <br>
+        <p class="lab6" id="lab6"> </p>
+        <script>
+                function print() {
+                    document.getElementById("lab6").innerHTML = "Данные local Storage " + date.toString()
+                }
+
+                //Заполнение хранилища
+<!--                let date = new Date();-->
+<!--                localStorage.setItem("DataFormat", date.toLocaleString());-->
+
+                date = localStorage.getItem("DataFormat");
+
+                print()
+        </script>
+{% endblock %}

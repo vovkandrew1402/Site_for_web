@@ -1,0 +1,22 @@
+{% extends 'main/base.html'%}
+
+{% block title %}
+Новости
+{% endblock %}
+
+{% block content %}
+  <h3>News</h3><br>
+ <h3>Вы попали на сайт с хорошими новостями</h3>
+    {% if m_news %}
+    {% for el in m_news %}
+        <div class = "alert alert-warning">
+          <h3>{{ el.title }}</h3>
+            <p>{{ el.text|linebreaks }}</p>
+        </div>
+    {% endfor %}
+    {% else %}
+    <p>
+        Нет новостей :(
+    </p>
+{% endif %}
+{% endblock %}
